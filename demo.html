@@ -1,0 +1,48 @@
+<style>
+    @keyframes animDelete {
+        from {
+            width: 60px;
+        }
+        to {
+            width: 0;
+        }
+    }
+
+    @keyframes animInsert {
+        0% {
+            width: 0;
+        }
+        50% {
+            margin: 0 10px;
+        }
+        100% {
+            width: 60px;
+        }
+    }
+
+    #mother {
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    .box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .delete {
+        width: 0;
+        animation: animDelete 400ms 1;
+    }
+
+    .insert {
+        animation: animInsert 400ms 1;
+    }
+</style>
+
+<div id="mother"></div>
+<button id="button">Change</button>
+
+<script type="application/javascript" src="diff.js"></script>
+<script type="application/javascript" src="demo.js"></script>
