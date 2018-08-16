@@ -78,6 +78,14 @@ function insert(p_new, p_old) {
     });
 }
 
+function remove(p_old) {
+    const length = currentElements[p_old].length;
+
+    if (length > 0) {
+        currentElements[p_old][length - 1].type = 'delete';
+    }
+}
+
 function change() {
     let newId = (current + 1) % (data.length - 1) + 1;
 
@@ -85,9 +93,7 @@ function change() {
 
     for (let i = 0; i < diffs.length; i++) {
         if (diffs[i].operation === 'delete') {
-            const pos = diffs[i].position_old;
-
-            currentElements[pos][0].type = 'delete';
+            remove(diffs[i].position_old);
         } else if (diffs[i].operation === 'insert') {
             insert(diffs[i].position_new, diffs[i].position_old);
         }
