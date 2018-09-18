@@ -1,3 +1,5 @@
-# diff
+# NodeDiff
 
-See demo: https://laxip.github.io/diff/
+Implemetation of Myers algorithm to detect minimal changes of two stages of tree nodes. Applying diff with animation.
+
+See demo: https://laxip.github.io/NodeDiff/
